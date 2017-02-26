@@ -1,9 +1,7 @@
 #!/bin/sh
-# generate fresh rsa key
 ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
-
-# generate fresh dsa key
 ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ed25519
 
 #prepare run dir
 mkdir -p /var/run/sshd

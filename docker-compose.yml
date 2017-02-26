@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+ ssh:
+  build: .
+  entrypoint: /usr/local/bin/docker-entrypoint.sh
+  command: /usr/sbin/docker-entrypoint.sh /usr/sbin/sshd  -D
+  privileged: true
+  ports:
+   - "4848:22"
+  volumes:
+   - ssh:/root/.ssh
+
+volumes:
+ ssh:
